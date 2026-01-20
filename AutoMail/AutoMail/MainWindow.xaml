@@ -1,0 +1,42 @@
+﻿<Window x:Class="AutoMail.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AutoMail"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="3*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- 입력 영역 -->
+        <StackPanel Grid.Column="0" Margin="0,0,10,0">
+            <ComboBox ItemsSource="{Binding WorkTypes}" />
+            <ComboBox ItemsSource="{Binding Targets}" />
+            <ComboBox ItemsSource="{Binding Tones}" />
+
+            <TextBox Height="150"
+                     AcceptsReturn="True"
+                     Text="{Binding InputContent}" />
+
+            <Button Content="📧 메일 생성"
+                    Command="{Binding GenerateMailCommand}" />
+
+            <Button Content="📝 보고서 생성"
+                    Command="{Binding GenerateReportCommand}" />
+
+            <Button Content="💬 회신 생성"
+                    Command="{Binding GenerateReplyCommand}" />
+        </StackPanel>
+
+        <!-- 결과 영역 -->
+        <TextBox Grid.Column="1"
+                 Text="{Binding GeneratedResult}"
+                 AcceptsReturn="True"
+                 IsReadOnly="True"
+                 TextWrapping="Wrap" />
+    </Grid>
+</Window>
