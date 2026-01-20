@@ -154,7 +154,8 @@ namespace AutoMail.ViewModels
 
         private async void GenerateMail()
         {
-            ResultText = "⏳ AI가 메일을 작성 중입니다...";
+            //ResultText = "⏳ AI가 메일을 작성 중입니다...";
+            ResultText = "제목\r\n\r\n안녕하십니까.\r\n\r\n항상 업무에 협조해 주셔서 감사드립니다.\r\n\r\n보다 안정적인 시스템 운영을 위하여\r\n아래와 같이 윈도우 시스템 재부팅 작업이 예정되어 있어 안내드립니다.\r\n\r\n■ 작업 내용\r\n\r\n윈도우 시스템 재부팅\r\n\r\n■ 작업 일시\r\n\r\n(예시) 2026년 1월 21일(수) 19:00 ~ 19:30\r\n※ 작업 상황에 따라 종료 시간이 변동될 수 있습니다.\r\n\r\n■ 영향 범위\r\n\r\n해당 시간 동안 관련 시스템 접속 및 사용이 일시적으로 제한될 수 있습니다.\r\n\r\n업무에 불편을 드리게 되어 대단히 송구하오며,\r\n원활한 작업 진행을 위해 사전에 업무 참고 및 준비를 부탁드립니다.\r\n\r\n작업이 완료되는 대로 다시 한번 안내드리겠습니다.\r\n기타 문의사항이 있으신 경우 담당 부서로 연락 주시기 바랍니다.";
 
             string prompt = _promptBuilder.BuildMailPrompt(
                 SelectedWorkType,
